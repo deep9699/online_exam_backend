@@ -17,6 +17,19 @@ router.get('/:tag_id/:difficulty/:count/:limit',function(req,res,next){
     })
 })
 
+router.put('/',function(req,res,next){
+    question.updateCountQuestion(req.body,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    })
+})
+
 // router.get('/',function(req,res,next){
 //     question.getAllQuestion(function(err,rows){
 //         if(err)

@@ -15,6 +15,10 @@ var examRouter = require('./routes/exam_routes');
 var questionPaperRouter = require('./routes/question_paper_routes');
 var student_exam = require('./routes/student_exam_routes');
 var student_answer = require('./routes/student_answer_routes');
+var result = require('./routes/result_routes');
+var questionRouter1 = require('./routes/question_routes1');
+var questionRouter2 = require('./routes/question_router2');
+
 
 
 var app = express();
@@ -37,10 +41,13 @@ app.use('/batch',batchRouter);
 app.use('/subject',subjectRouter);
 app.use('/tag',tagRouter);
 app.use('/question',questionRouter);
+app.use('/question1',questionRouter1);
+app.use('/question2',questionRouter2);
 app.use('/exam',examRouter);
 app.use('/question_paper',questionPaperRouter);
 app.use('/student_exam',student_exam);
 app.use('/student_answer',student_answer);
+app.use('/result',result);
 
 
 // catch 404 and forward to error handler
